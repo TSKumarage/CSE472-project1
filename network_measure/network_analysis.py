@@ -9,17 +9,17 @@ Task : Friendship Network Analysis
 
 import networkx as nx
 import matplotlib.pyplot as plt
-import data_extraction.data_reader as dt
+import data_extraction.data_wrapper as dt
 
 
-def main():
+def main():  # main method to execute all the analysis steps
     friendship_network = init_network()
 
-    node_list, edge_list = dt.read_data()
+    node_list, edge_list = dt.read_data()  # read the stored edge_graph_csv in data repository
 
-    add_nodes(network=friendship_network, node_list=node_list)
+    add_nodes(network=friendship_network, node_list=node_list)  # populate nodes
 
-    add_edges(network=friendship_network, edge_list=edge_list)
+    add_edges(network=friendship_network, edge_list=edge_list)  # populate edges
 
     print("Network Analysis of: ", friendship_network)
     print()
@@ -35,7 +35,8 @@ def main():
     # plot and report network centrality measures (degree, betweenness, closeness)
 
 
-def init_network():
+def init_network():  # Initialize a empty NetworkX graph
+
     init_g = nx.DiGraph(name='Twitter Friendship Network', course='CSE 472')
 
     return init_g
@@ -85,7 +86,12 @@ def basic_network_report(network):  # Print a basic report on node distribution 
     print(format_string.format("Number of weakly connected components", nx.number_weakly_connected_components(network)))
 
 
-def plot_degree_distribution(network, plot_type='all'):  # Plot a histogram of the degree distribution
+def plot_degree_distribution(network, plot_type='all'):
+    """
+      Plot a histogram of the degree distribution
+      :param network: NetworkX graph object
+      :param plot_type: decides whether to print both in and out degree distributions in the same graph
+      """
 
     if plot_type == 'in' or plot_type =='all':
         in_degree_mat = network.in_degree()
