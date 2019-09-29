@@ -9,7 +9,7 @@ Friendship Network extraction, measure and visualization for Social Media Platfo
 
 Numpy
 ```
-python -m pip install --user numpy scipy matplotlib ipython jupyter pandas sympy nose
+python -m pip install --user numpy
 ```
 Pandas
 ```
