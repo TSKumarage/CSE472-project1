@@ -43,7 +43,7 @@ def add_edges(network, edge_list): # add list of edges to a given network
         network.add_edge(edge[0], edge[1], weight=1)
 
 
-def visualize_network(network):
+def visualize_network(network):  # Visualize the network using graphviz layouts
 
     prog_list = ["dot", "sfdp"]
 
