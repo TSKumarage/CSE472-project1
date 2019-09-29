@@ -9,7 +9,7 @@ Task : Friendship Network visualization using NetworkX
 
 import networkx as nx
 import matplotlib.pyplot as plt
-import data_extraction.data_wrapper as dt
+from ..data_extraction import data_wrapper as dt
 
 
 def main():  # main method to execute all the analysis steps

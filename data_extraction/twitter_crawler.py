@@ -6,7 +6,7 @@ from tweepy import OAuthHandler
 import time
 #  Using panda to handle the dataframe
 import pandas as pd
-import data_extraction.data_wrapper as dt
+from ..data_extraction import data_wrapper as dt
 
 __author__ = 'Fan LEI'
 
